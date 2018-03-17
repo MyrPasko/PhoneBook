@@ -1,0 +1,36 @@
+<main class="main" ng-controller="ControlController as ControlCtrl">
+
+    <div class="saveback">
+        <a ui-sref="main">
+            <input class="btn-control back" type="button" value="НАЗАД"/>
+        </a>
+        <a ui-sref="main">
+            <input class="btn-control save" type="button" value="СОХРАНИТЬ">
+        </a>
+    </div>
+
+    <div class="information">
+        <p>{{ ControlCtrl.man.name }}</p>
+        <p>{{ ControlCtrl.man.number }}</p>
+        <p>{{ ControlCtrl.man.email }}</p>
+    </div>
+
+    <div class="callmessage">
+        <a href="#">
+            <input class="btn-control call" type="button" value="ПОЗВОНИТЬ">
+            </a>
+        <a href="#">
+            <input class="btn-control message" type="button" value="СООБЩЕНИЕ">
+        </a>
+    </div>
+
+    <div class="changeremove">
+        <a ui-sref="change">
+            <input class="btn-control change" type="button" value="ИЗМЕНИТЬ" />
+        </a>
+        <a ui-sref="main">
+            <input class="btn-control remove" type="button" value="УДАЛИТЬ" ng-click="ControlCtrl.removeMan(ControlCtrl.man)"/>
+        </a>
+    </div>
+
+</main>

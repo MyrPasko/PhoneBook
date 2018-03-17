@@ -1,0 +1,22 @@
+<main class="main" ng-controller="MainController as MainCtrl" >
+
+    <div class="container">
+        <input class="search field" type="search" placeholder="Поиск" ng-model="searching">
+    </div>
+
+    <div ng-repeat="man in MainCtrl.people | toArray: false | filter: {name: searching} | orderBy: MainCtrl.sortparam" class="contacts">
+        <div class="person">
+            <h2> {{ man.name }} </h2>
+            <a ui-sref="control">
+                <input class="menu" type="button" value=">" ng-click="MainCtrl.setCurrentObj(man)"/>
+            </a>
+        </div>
+    </div>
+
+    <div class="addContainer">
+        <a ui-sref="save">
+            <input class="addButton" type="button" value="+" />
+        </a>
+    </div>
+
+</main>

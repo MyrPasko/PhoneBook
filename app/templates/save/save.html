@@ -1,0 +1,24 @@
+<main class="main" ng-controller="SaveController as SaveCtrl">
+
+    <div class="saveback">
+        <a ui-sref="main">
+            <input class="btn-control back" type="button" value="НАЗАД" />
+        </a>
+        <a ui-sref="main">
+            <input class="btn-control save" type="button" value="СОХРАНИТЬ" ng-click="SaveCtrl.addMan(SaveCtrl.name, SaveCtrl.number, SaveCtrl.email)" />
+        </a>
+    </div>
+
+    <form name="information" class="information changer">
+        <input ng-model="SaveCtrl.name" class="info name" type="text" name="name" placeholder="Имя" />
+        <input ng-model="SaveCtrl.number" class="info number" type="number" name="tel" placeholder="Номер телефона" />
+        <div ng-messages="information.tel.$error" role="alert">
+            <div class="warning number" ng-message="number">Используйте цифры, иначе номер не сохранится.</div>
+        </div>
+        <input ng-model="SaveCtrl.email" class="info email" type="email" name="email" placeholder="E-mail" />
+        <div ng-messages="information.email.$error" role="alert">
+            <div class="warning email" ng-message="email">Введите корректный адрес, иначе e-mail не сохранится.</div>
+        </div>
+    </form>
+
+</main>
